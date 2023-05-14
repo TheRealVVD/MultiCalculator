@@ -4,32 +4,35 @@ import app.Main;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class ButtonsAndOperations {
+
+    static ArrayList<JButton> integersButtons;
+    static List<String> operationsButtons;
+
     public static JPanel btnsAndOps() {
-        Main listen = new Main();
+        Actions listen = new Actions();
 
         JPanel buttonsPanel = new JPanel();
         GridLayout numsAndOpsLayout = new GridLayout(6, 3);
         buttonsPanel.setLayout(numsAndOpsLayout);
 
-        ArrayList<JButton> btns = new ArrayList<>();
+        integersButtons = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
             JButton jButton = new JButton(Integer.toString(i));
-//            jButton.addActionListener(listen);
-            btns.add(jButton);
+            jButton.addActionListener(listen);
+            integersButtons.add(jButton);
         }
-        btns.forEach(buttonsPanel::add);
+        integersButtons.forEach(buttonsPanel::add);
 
-        List<String> operations = Arrays.asList("+", "-", "*", "/", ".", "C", "=");
-        operations.forEach(x -> {
+        operationsButtons = Arrays.asList("+", "-", "*", "/", ".", "C", "=");
+        operationsButtons.forEach(x -> {
             JButton operButtons = new JButton(x);
-//            operButtons.addActionListener(listen);
+            operButtons.addActionListener(listen);
             buttonsPanel.add(operButtons);
         });
 
