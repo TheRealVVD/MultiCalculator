@@ -4,7 +4,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
 import static app.swing.MyComponent.setupButtonsSettings;
 
@@ -23,15 +22,16 @@ public class UIFrame implements ActionListener {
 
 
     private final String[] valueButtons = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
-    private final String[] operationsButtonsSign = {"+", "-", "*", "/", "=", "sqrt", "1/x", "x*x", "x^y",
+    private final String[] operationsButtonsSign = {"+", "-", "*", "/", "=", "log", "1/x", "x*x", "x^y",
             "Sin", "Cos", "Tan", "C", "x!", "|x|"};
-    private final JButton buttons[], plusBut, minusBut, multiplyBut, divedeBut, equalBut, sqrtBut, oneDividedByBut,
+    private final JButton buttons[], plusBut, minusBut, multiplyBut, divedeBut, equalBut, logBut, oneDividedByBut,
             squareBut, xPOWyBut, sinBut, cosBut, tanBut, cancelBut, factBut, absBut;
 
     private final Font buttonFont;
     private final Font digitButtonFont;
     private final Font resultAreaFont;
     private final Dimension buttonsDimension;
+    private final Dimension resultAreaDimension;
 
     public UIFrame() {
         frame = new JFrame("Calculator") {};
@@ -45,13 +45,14 @@ public class UIFrame implements ActionListener {
         subPanel5 = new JPanel();
         subPanel6 = new JPanel();
 
-        resultArea = new JTextArea(1, 28);
+        resultArea = new JTextArea(1, 30);
 
         buttonFont = new Font("Consolas", Font.PLAIN, 16);
-        digitButtonFont = new Font("Consolas", Font.BOLD, 17);
+        digitButtonFont = new Font("Consolas", Font.BOLD, 16);
         resultAreaFont = new Font("Consolas", Font.BOLD, 20);
 
-        buttonsDimension = new Dimension(60, 40);
+        buttonsDimension = new Dimension(64, 40);
+        resultAreaDimension = new Dimension(350, 35);
 
         buttons = new JButton[10];
         for (int i = 0; i < 10; i++) {
@@ -63,7 +64,7 @@ public class UIFrame implements ActionListener {
         multiplyBut = new JButton("*");
         divedeBut = new JButton("/");
         equalBut = new JButton("=");
-        sqrtBut = new JButton("sqrt");
+        logBut = new JButton("log");
         oneDividedByBut = new JButton("1/x");
         squareBut = new JButton("x*x");
         xPOWyBut = new JButton("x^y");
@@ -81,58 +82,38 @@ public class UIFrame implements ActionListener {
         Toolkit toolkit = Toolkit.getDefaultToolkit();
         Dimension dimension = toolkit.getScreenSize();
 
-        frame.setBounds(dimension.width/2 - 200, dimension.height/2 - 200, 350, 375);
+        frame.setBounds(dimension.width/2 - 180, dimension.height/2 - 190, 380, 380);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
 
         resultArea.setEditable(false);
         resultArea.setFont(resultAreaFont);
-//        resultArea.set
+        resultArea.setPreferredSize(resultAreaDimension);
 
 
-        for (int i = 0; i < buttons.length; i++) {
-            setupButtonsSettings(buttons[i], digitButtonFont, Color.WHITE, buttonsDimension);
-//            buttons[i].setFont(buttonFont);
-//            buttons[i].setBackground(Color.WHITE);
-//            buttons[i].setPreferredSize(buttonsDimension);
-
+        for (JButton button : buttons) {
+            setupButtonsSettings(button, digitButtonFont, Color.WHITE, buttonsDimension);
         }
-        plusBut.setFont(buttonFont);
-        plusBut.setPreferredSize(buttonsDimension);
-        minusBut.setFont(buttonFont);
-        minusBut.setPreferredSize(buttonsDimension);
-        multiplyBut.setFont(buttonFont);
-        multiplyBut.setPreferredSize(buttonsDimension);
-        divedeBut.setFont(buttonFont);
-        divedeBut.setPreferredSize(buttonsDimension);
-        equalBut.setFont(buttonFont);
-        equalBut.setPreferredSize(buttonsDimension);
-        sqrtBut.setFont(buttonFont);
-        sqrtBut.setPreferredSize(buttonsDimension);
-        oneDividedByBut.setFont(buttonFont);
-        oneDividedByBut.setPreferredSize(buttonsDimension);
-        squareBut.setFont(buttonFont);
-        squareBut.setPreferredSize(buttonsDimension);
-        xPOWyBut.setFont(buttonFont);
-        xPOWyBut.setPreferredSize(buttonsDimension);
-        sinBut.setFont(buttonFont);
-        sinBut.setPreferredSize(buttonsDimension);
-        cosBut.setFont(buttonFont);
-        cosBut.setPreferredSize(buttonsDimension);
-        tanBut.setFont(buttonFont);
-        tanBut.setPreferredSize(buttonsDimension);
-        cancelBut.setFont(buttonFont);
-        cancelBut.setPreferredSize(buttonsDimension);
-        factBut.setFont(buttonFont);
-        factBut.setPreferredSize(buttonsDimension);
-        absBut.setFont(buttonFont);
-        absBut.setPreferredSize(buttonsDimension);
+        setupButtonsSettings(plusBut, buttonFont, Color.LIGHT_GRAY, buttonsDimension);
+        setupButtonsSettings(minusBut, buttonFont, Color.LIGHT_GRAY, buttonsDimension);
+        setupButtonsSettings(multiplyBut, buttonFont, Color.LIGHT_GRAY, buttonsDimension);
+        setupButtonsSettings(divedeBut, buttonFont, Color.LIGHT_GRAY, buttonsDimension);
+        setupButtonsSettings(equalBut, buttonFont, Color.LIGHT_GRAY, buttonsDimension);
+        setupButtonsSettings(logBut, buttonFont, Color.LIGHT_GRAY, buttonsDimension);
+        setupButtonsSettings(oneDividedByBut, buttonFont, Color.LIGHT_GRAY, buttonsDimension);
+        setupButtonsSettings(squareBut, buttonFont, Color.LIGHT_GRAY, buttonsDimension);
+        setupButtonsSettings(xPOWyBut, buttonFont, Color.LIGHT_GRAY, buttonsDimension);
+        setupButtonsSettings(sinBut, buttonFont, Color.LIGHT_GRAY, buttonsDimension);
+        setupButtonsSettings(cosBut, buttonFont, Color.LIGHT_GRAY, buttonsDimension);
+        setupButtonsSettings(tanBut, buttonFont, Color.LIGHT_GRAY, buttonsDimension);
+        setupButtonsSettings(cancelBut, buttonFont, Color.LIGHT_GRAY, buttonsDimension);
+        setupButtonsSettings(factBut, buttonFont, Color.LIGHT_GRAY, buttonsDimension);
+        setupButtonsSettings(absBut, buttonFont, Color.LIGHT_GRAY, buttonsDimension);
 
 
-//        GridLayout numsAndOpsLayout = new GridLayout(1, 5);
 
-        panel.add(Box.createHorizontalStrut(100));
+//        panel.add(Box.createHorizontalStrut(100));
         subPanel1.add(resultArea);
         panel.add(subPanel1);
 
@@ -141,16 +122,14 @@ public class UIFrame implements ActionListener {
         subPanel2.add(xPOWyBut);
         subPanel2.add(cancelBut);
         subPanel2.add(divedeBut);
-//        subPanel2.setLayout(numsAndOpsLayout);
         panel.add(subPanel2);
 
 
-        subPanel3.add(sqrtBut);
+        subPanel3.add(logBut);
         subPanel3.add(buttons[7]);
         subPanel3.add(buttons[8]);
         subPanel3.add(buttons[9]);
         subPanel3.add(multiplyBut);
-//        subPanel3.setLayout(numsAndOpsLayout);
         panel.add(subPanel3);
 
         subPanel4.add(sinBut);
@@ -158,7 +137,6 @@ public class UIFrame implements ActionListener {
         subPanel4.add(buttons[5]);
         subPanel4.add(buttons[6]);
         subPanel4.add(minusBut);
-//        subPanel4.setLayout(numsAndOpsLayout);
         panel.add(subPanel4);
 
         subPanel5.add(cosBut);
@@ -166,7 +144,6 @@ public class UIFrame implements ActionListener {
         subPanel5.add(buttons[2]);
         subPanel5.add(buttons[3]);
         subPanel5.add(plusBut);
-//        subPanel5.setLayout(numsAndOpsLayout);
         panel.add(subPanel5);
 
         subPanel6.add(tanBut);
@@ -174,7 +151,6 @@ public class UIFrame implements ActionListener {
         subPanel6.add(buttons[0]);
         subPanel6.add(factBut);
         subPanel6.add(equalBut);
-//        subPanel6.setLayout(numsAndOpsLayout);
         panel.add(subPanel6);
 
         frame.add(panel);

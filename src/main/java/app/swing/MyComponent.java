@@ -10,4 +10,9 @@ public class MyComponent {
         jbutton.setBackground(color);
         jbutton.setPreferredSize(dimension);
     }
+
+    public static void setupButtonsSettings(JButton jbutton, Font font, Dimension dimension) {
+        jbutton.setFont(font);
+        jbutton.setPreferredSize(dimension);
+    }
 }
