@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c9a03cfb-019c-43cb-886b-710dff00fa60" name="Changes" comment="Redesigned panel with buttons and screen. The grid is set, the buttons are aligned with each other. Applied settings for elements">
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/swing/Calculatings.java" afterDir="false" />
+    <list default="true" id="c9a03cfb-019c-43cb-886b-710dff00fa60" name="Changes" comment="Redefined the method for customizing the appearance of buttons. Refactoring files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/swing/Actions.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/swing/ButtonsAndOperations.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/swing/InitCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/swing/InitCalculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/swing/MainPanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/swing/MyComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/swing/MyComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/swing/ResultField.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/swing/Calculatings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/swing/Calculatings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/swing/UIFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/swing/UIFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -114,7 +108,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684243966977</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Redefined the method for customizing the appearance of buttons. Refactoring files">
+      <created>1684245554201</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1684245554201</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -132,6 +133,7 @@
     <MESSAGE value="CreatedProject. Added some files of realization of calc" />
     <MESSAGE value="Added Actions file with ActionListener logic for buttons &#10;Changed some fields inits" />
     <MESSAGE value="Redesigned panel with buttons and screen. The grid is set, the buttons are aligned with each other. Applied settings for elements" />
-    <option name="LAST_COMMIT_MESSAGE" value="Redesigned panel with buttons and screen. The grid is set, the buttons are aligned with each other. Applied settings for elements" />
+    <MESSAGE value="Redefined the method for customizing the appearance of buttons. Refactoring files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Redefined the method for customizing the appearance of buttons. Refactoring files" />
   </component>
 </project>
