@@ -19,6 +19,10 @@ public class UIFrame implements ActionListener {
     private final JPanel subPanel5;
     private final JPanel subPanel6;
 
+    private final JMenuBar menuBar;
+    private final JMenu mainMenu;
+    private final JMenu averMenu;
+
     private final JTextArea resultArea;
 
 
@@ -74,6 +78,10 @@ public class UIFrame implements ActionListener {
         cancelBut = new JButton("C");
         rateBut = new JButton("1%");
         absBut = new JButton("|x|");
+
+        menuBar = new JMenuBar();
+        mainMenu = new JMenu("Калькулятор");
+        averMenu = new JMenu("Усредняющий калькулятор");
 
         calc = new Calculatings();
     }
@@ -172,9 +180,14 @@ public class UIFrame implements ActionListener {
         tanBut.addActionListener(this);
         absBut.addActionListener(this);
 
+        menuBar.add(mainMenu);
+        menuBar.add(averMenu);
+
 
         frame.add(panel);
+        frame.setJMenuBar(menuBar);
         frame.setVisible(true);
+        frame.revalidate();
 
     }
 
