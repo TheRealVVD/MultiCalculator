@@ -7,8 +7,8 @@ import java.awt.event.ActionListener;
 
 import static app.swing.MyComponent.setupButtonsSettings;
 
-public class UIFrame implements ActionListener {
-    
+public class UIAverage implements ActionListener {
+
     private final Calculatings calc;
     private JFrame frame;
     private final JPanel panel;
@@ -38,8 +38,8 @@ public class UIFrame implements ActionListener {
     private final Dimension buttonsDimension;
     private final Dimension resultAreaDimension;
 
-    public UIFrame() {
-        frame = new JFrame("Calculatings") {};
+    public UIAverage() {
+        frame = new JFrame("Calculator") {};
         frame.setVisible(true);
 
         panel = new JPanel();
@@ -186,8 +186,7 @@ public class UIFrame implements ActionListener {
         check.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                UIAverage uiAverage = new UIAverage();
-                uiAverage.init();
+                System.exit(0);
             }
         });
 
@@ -302,3 +301,4 @@ public class UIFrame implements ActionListener {
         }
     }
 }
+
