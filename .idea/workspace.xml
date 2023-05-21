@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c9a03cfb-019c-43cb-886b-710dff00fa60" name="Changes" comment="Redefined the method for customizing the appearance of buttons. Refactoring files">
+    <list default="true" id="c9a03cfb-019c-43cb-886b-710dff00fa60" name="Changes" comment="Added menu for switching between modes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/swing/Calculatings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/swing/Calculatings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/swing/UIFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/swing/UIFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +20,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="d5d69123ff6556d7ccf6080ff01534dc0062a320" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -73,6 +75,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.InitCalculator" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.InitCalculator" />
         <item itemvalue="Application.Main" />
       </list>

@@ -35,7 +35,7 @@ public class UIFrame implements ActionListener {
     private final Dimension resultAreaDimension;
 
     public UIFrame() {
-        frame = new JFrame("Calculatings") {};
+        frame = new JFrame("Calculator") {};
         frame.setVisible(true);
 
         panel = new JPanel();
