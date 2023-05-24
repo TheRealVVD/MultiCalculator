@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c9a03cfb-019c-43cb-886b-710dff00fa60" name="Changes" comment="Operation factorial changed by rate. Added ActionListener">
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/swing/UIAverage.java" afterDir="false" />
+    <list default="true" id="c9a03cfb-019c-43cb-886b-710dff00fa60" name="Changes" comment="The ability to switch between two calculation modes is added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/swing/UIAverage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/swing/UIAverage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/swing/UIFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/swing/UIFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -132,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684427699248</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="The ability to switch between two calculation modes is added">
+      <created>1684686300957</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1684686300957</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -152,6 +159,7 @@
     <MESSAGE value="Redesigned panel with buttons and screen. The grid is set, the buttons are aligned with each other. Applied settings for elements" />
     <MESSAGE value="Redefined the method for customizing the appearance of buttons. Refactoring files" />
     <MESSAGE value="Operation factorial changed by rate. Added ActionListener" />
-    <option name="LAST_COMMIT_MESSAGE" value="Operation factorial changed by rate. Added ActionListener" />
+    <MESSAGE value="The ability to switch between two calculation modes is added" />
+    <option name="LAST_COMMIT_MESSAGE" value="The ability to switch between two calculation modes is added" />
   </component>
 </project>

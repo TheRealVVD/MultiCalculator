@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import static app.swing.MyComponent.setupButtonsSettings;
 
@@ -20,8 +21,12 @@ public class UIAverage implements ActionListener {
     private final JPanel subPanel6;
 
     private final JMenuBar menuBar;
-    private final JMenu mainMenu;
-    private final JMenu averMenu;
+    private final JMenu chooseTypeMenu;
+    private final JMenu chooseStockMarketType;
+    private final JMenuItem casualCalc;
+    private final JMenuItem averagingCalc;
+//    private final JMenuItem averagingCalc1;
+//    private final JMenuItem averagingCalc2;
 
     private final JTextArea resultArea;
 
@@ -31,6 +36,8 @@ public class UIAverage implements ActionListener {
             "Sin", "Cos", "Tan", "C", "x!", "|x|"};
     private final JButton buttons[], plusBut, minusBut, multiplyBut, divideBut, equalBut, logBut, oneDividedByBut,
             squareBut, xPOWyBut, sinBut, cosBut, tanBut, cancelBut, rateBut, absBut;
+
+    private final ArrayList<JButton> operationsButtons;
 
     private final Font buttonFont;
     private final Font digitButtonFont;
@@ -59,6 +66,8 @@ public class UIAverage implements ActionListener {
         buttonsDimension = new Dimension(64, 40);
         resultAreaDimension = new Dimension(350, 35);
 
+        operationsButtons = new ArrayList<JButton>();
+
         buttons = new JButton[10];
         for (int i = 0; i < 10; i++) {
             buttons[i] = new JButton(Integer.toString(i));
@@ -79,9 +88,27 @@ public class UIAverage implements ActionListener {
         rateBut = new JButton("1%");
         absBut = new JButton("|x|");
 
+        operationsButtons.add(plusBut);
+        operationsButtons.add(minusBut);
+        operationsButtons.add(multiplyBut);
+        operationsButtons.add(divideBut);
+        operationsButtons.add(equalBut);
+        operationsButtons.add(logBut);
+        operationsButtons.add(oneDividedByBut);
+        operationsButtons.add(squareBut);
+        operationsButtons.add(xPOWyBut);
+        operationsButtons.add(sinBut);
+        operationsButtons.add(cosBut);
+        operationsButtons.add(tanBut);
+        operationsButtons.add(cancelBut);
+        operationsButtons.add(rateBut);
+        operationsButtons.add(absBut);
+
         menuBar = new JMenuBar();
-        mainMenu = new JMenu("Калькулятор");
-        averMenu = new JMenu("Усредняющий калькулятор");
+        chooseTypeMenu = new JMenu("Calculator type");
+        chooseStockMarketType = new JMenu("StockMarket");
+        casualCalc = new JMenuItem("Casual", 'u');
+        averagingCalc = new JMenuItem("Averaging Calculator", 'e');
 
         calc = new Calculatings();
     }
@@ -103,21 +130,9 @@ public class UIAverage implements ActionListener {
         for (JButton button : buttons) {
             setupButtonsSettings(button, digitButtonFont, Color.WHITE, buttonsDimension);
         }
-        setupButtonsSettings(plusBut, buttonFont, Color.LIGHT_GRAY, buttonsDimension);
-        setupButtonsSettings(minusBut, buttonFont, Color.LIGHT_GRAY, buttonsDimension);
-        setupButtonsSettings(multiplyBut, buttonFont, Color.LIGHT_GRAY, buttonsDimension);
-        setupButtonsSettings(divideBut, buttonFont, Color.LIGHT_GRAY, buttonsDimension);
-        setupButtonsSettings(equalBut, buttonFont, Color.LIGHT_GRAY, buttonsDimension);
-        setupButtonsSettings(logBut, buttonFont, Color.LIGHT_GRAY, buttonsDimension);
-        setupButtonsSettings(oneDividedByBut, buttonFont, Color.LIGHT_GRAY, buttonsDimension);
-        setupButtonsSettings(squareBut, buttonFont, Color.LIGHT_GRAY, buttonsDimension);
-        setupButtonsSettings(xPOWyBut, buttonFont, Color.LIGHT_GRAY, buttonsDimension);
-        setupButtonsSettings(sinBut, buttonFont, Color.LIGHT_GRAY, buttonsDimension);
-        setupButtonsSettings(cosBut, buttonFont, Color.LIGHT_GRAY, buttonsDimension);
-        setupButtonsSettings(tanBut, buttonFont, Color.LIGHT_GRAY, buttonsDimension);
-        setupButtonsSettings(cancelBut, buttonFont, Color.LIGHT_GRAY, buttonsDimension);
-        setupButtonsSettings(rateBut, buttonFont, Color.LIGHT_GRAY, buttonsDimension);
-        setupButtonsSettings(absBut, buttonFont, Color.LIGHT_GRAY, buttonsDimension);
+        for (JButton button : operationsButtons) {
+            setupButtonsSettings(button, buttonFont, Color.LIGHT_GRAY, buttonsDimension);
+        }
 
 
 
@@ -164,35 +179,24 @@ public class UIAverage implements ActionListener {
         for (int i = 0; i < 10; i++) {
             buttons[i].addActionListener(this);
         }
-        plusBut.addActionListener(this);
-        minusBut.addActionListener(this);
-        plusBut.addActionListener(this);
-        multiplyBut.addActionListener(this);
-        divideBut.addActionListener(this);
-        equalBut.addActionListener(this);
-        oneDividedByBut.addActionListener(this);
-        rateBut.addActionListener(this);
-        cancelBut.addActionListener(this);
-        squareBut.addActionListener(this);
-        xPOWyBut.addActionListener(this);
-        logBut.addActionListener(this);
-        sinBut.addActionListener(this);
-        cosBut.addActionListener(this);
-        tanBut.addActionListener(this);
-        absBut.addActionListener(this);
+        for (JButton button : operationsButtons) {
+            button.addActionListener(this);
+        }
 
-        JMenuItem check = averMenu.add(new JMenuItem("Hey"));
+        chooseTypeMenu.add(casualCalc);
+        chooseTypeMenu.add(chooseStockMarketType);
+        chooseStockMarketType.add(averagingCalc);
+        averagingCalc.setEnabled(false);
 
-        check.addActionListener(new ActionListener() {
+        casualCalc.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.exit(0);
+                UIFrame uiFrame = new UIFrame();
+                uiFrame.init();
             }
         });
 
-
-        menuBar.add(mainMenu);
-        menuBar.add(averMenu);
+        menuBar.add(chooseTypeMenu);
 
         frame.add(panel);
         frame.setJMenuBar(menuBar);
